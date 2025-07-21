@@ -1,0 +1,6 @@
+[구조물 종류별 요약 통계]
+structure_name
+Apartment          2
+BandalgomCoffee    2
+Building           2
+Name: count, dtype: int64
