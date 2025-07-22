@@ -1,0 +1,19 @@
+Area 0 요약:
+  - Apartment: 1개
+  - Building: 1개
+  - 건설 현장: 1개
+
+Area 1 요약:
+  - Apartment: 2개
+  - Building: 2개
+  - BandalgomCoffee: 2개
+
+Area 2 요약:
+  - Apartment: 1개
+  - MyHome: 1개
+  - Building: 1개
+  - 건설 현장: 1개
+
+Area 3 요약:
+  - Apartment: 1개
+  - 건설 현장: 1개
