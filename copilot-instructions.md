@@ -1,4 +1,4 @@
-손님들이 카페에 오는 최적 경로를 쉽게 확인할 수 있도록 반달곰 커피 지점을 향한 여정을 직접 지도와 데이터로 그려보기로 결심하고, 파이썬 프로그램을 작성하려고 해.
+손님들이 카페에 오는 최적 경로를 쉽게 확인할 수 있도록 반달곰 커피 지점을 향한 여정을 직접 지도와 데이터로 그려보기로 결심하고, 관련된 파이썬 프로그램을 작성하고자 함.
 
 📌 문제 개요
 학습자는 ‘반달곰 커피 지점’을 찾는다는 테마 아래, 실질적인 데이터를 분석하고 이를 지도화하며, 최종적으로 경로 탐색 알고리즘을 구현하는 프로젝트에 참여합니다.
@@ -31,6 +31,20 @@
 - 파일 저장과 로딩 : CSV 저장, PNG 저장 및 활용
 
 ---
+import pandas as pd
+
+# Load the datasets
+area_map = pd.read_csv('csv/area_map.csv')
+area_struct = pd.read_csv('csv/area_struct.csv')
+area_category = pd.read_csv('csv/area_category.csv')
+
+# Display the first few rows of each DataFrame
+print("Area Map:")
+print(area_map.head())
+print("\nArea Structure:")
+print(area_struct.head())
+print("\nArea Category:")
+print(area_category.head())
 
 📘 프로젝트 구성은 총3단계야.
 📂 1단계: 데이터 수집 및 분석
@@ -38,9 +52,9 @@
     1. area_map.csv, area_struct.csv, area_category.csv 파일을 불러와 내용을 출력하고 분석합니다.
     2. 구조물 ID를 area_category.csv 기준으로 이름으로 변환합니다.
     3. 세 데이터를 하나의 DataFrame으로 병합하고, area 기준으로 정렬합니다.
-    4. 확인된 데이터에는 여러 지역의 정보가 들어 있지만 반달곰 커피는 area 1에 집중되어 있는 것을 알게 되어 있습니다. 따라서 전체 지역의 정보는 불필요하기 때문에 area 1에 대한 데이터만 필터링 해서 출력한다.
+    4. 확인된 데이터에는 여러 지역의 정보가 들어 있지만 반달곰 커피는 area 1에 집중되어 있는 것을 알게 되어 있습니다. 모든 area별의 구조물을 추출합니다.
     5. 결과 코드는 caffee_map.py로 저장합니다.
-    6. 구조물 종류별 요약 통계를 리포트로 출력하고, report_01.txt로 저장합니다.
+    6. 구조물 종류별 요약 통계를 리포트로 출력하고, report_01a.txt로 저장합니다.
 
 🗺 2단계: 지도 시각화
 ✔ 수행 내용
@@ -78,6 +92,8 @@
        - 3단계: map_direct_save.py (경로 탐색)
 - 최종 결과물로는 map.png, map_final.png, home_to_cafe.csv가 생성됩니다.
 - 추가적인 라이브러리나 프레임워크는 사용하지 않으며, Python 표준 라이브러리만으로 구현해야 합니다.
+- 데이터가 되는 csv 파일은 'csv'라는 하위 폴더안에 있다.
+- 출력 혹은 저장은, 'output'이라는 하위 폴더에 넣을 수 있도록 한다.
 
 ---
    - Python에서 기본 제공되는 명령어 이외의 별도의 라이브러리나 패키지를 사용해서는 안됩니다.
