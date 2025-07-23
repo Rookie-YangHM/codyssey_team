@@ -60,6 +60,7 @@ def main():
     path_found = find_shortest_path(merged_df)
 
     if path_found:
+        # 경로 데이터를 CSV로 저장
         path_df = pd.DataFrame(path_found, columns=['x', 'y'])
         output_dir = 'output'
         if not os.path.exists(output_dir):
@@ -68,7 +69,8 @@ def main():
         path_df.to_csv(path_csv_path, index=False)
         print(f"최단 경로가 '{path_csv_path}'에 저장되었습니다.")
 
-        draw_map(merged_df, path_to_draw=path_found, output_filename='map_final.png')
+        # 경로가 포함된 지도 시각화 (area 구역 정보 포함)
+        draw_map(merged_df, path_to_draw=path_found, show_areas=True, output_filename='map_final.png')
     else:
         print("경로를 찾을 수 없습니다.")
 
